@@ -2,8 +2,10 @@
 
 public class UnitConverterViewModel
 {
-    public double Length {get; set; }
-    public double Value {get; set; }
-    public string UnitFrom {get; set;}
-    public string UnitTo {get; set;}
+    public double Measure { get; set; } = 0;
+    public double? Value { get; set; } = null;
+    public string UnitFrom { get; set; } = "";
+    public string UnitTo { get; set; } = "";
+    public string View { get; set; } = "";
+    
 }

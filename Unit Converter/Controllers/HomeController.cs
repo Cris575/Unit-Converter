@@ -1,3 +1,4 @@
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Unit_Converter.Models;
@@ -17,24 +18,45 @@ public class HomeController : Controller
         _unitFactorsProvider = unitFactorsProvider;
     }
     
-    public IActionResult Index()
+    public IActionResult Index(UnitConverterViewModel unitConverter)
     {
-        var units = _unitFactorsProvider.GetLengthFactorsInMeters();
-        _unitConverter.ConvertLength(1, 2, 3, units);
-        return View();
-    }
-
-    public IActionResult Privacy()
-    {
-        return View();
+        return View(unitConverter);
     }
     
+    public IActionResult Weight(UnitConverterViewModel unitConverter)
+    {
+        return View(unitConverter);
+    } 
+    
+    public IActionResult Temperatures(UnitConverterViewModel unitConverter)
+    {
+        return View(unitConverter);
+    }
+
     [HttpPost]
     public IActionResult UnitConvert(UnitConverterViewModel unitConverter)
     {
-       return View(unitConverter);
-    }
+        switch (unitConverter.View)
+        {
+            case "Length":
+                var lengthFactors = _unitFactorsProvider.GetLengthFactorsInMeters();
+                unitConverter.Value = _unitConverter.ConvertStandard(unitConverter, lengthFactors);
+                break;
 
+            case "Weight":
+                var weightFactors = _unitFactorsProvider.GetWeightFactorsInKilograms();
+                unitConverter.Value = _unitConverter.ConvertStandard(unitConverter, weightFactors);
+                break;
+
+            case "Temperatures":
+                var tempFactors = _unitFactorsProvider.GetTemperaturesFactorsInCelsius();
+                unitConverter.Value = _unitConverter.ConvertTemperature(unitConverter, tempFactors);
+                break;
+        }
+
+        return View("Index", unitConverter);
+    }
+    
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {
