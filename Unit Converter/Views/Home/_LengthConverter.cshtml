@@ -2,22 +2,20 @@
 
 <form asp-controller="Home" asp-action="UnitConvert">
     <div class="form-group">
-        <label for="exampleInputEmail1">Email address</label>
-        <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="Measure">
+        <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Measure" name="Measure">
     </div>
     <div class="form-group">
         @* <label for="exampleInputPassword1">Password</label> *@
         @* <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"> *@
         <select class="form-select" aria-label="Default select example" name="unitFrom">
-            <option selected disabled>Open this select menu</option>
-            <option>Millimeter</option>
-            <option>Centimeter</option>
-            <option>Meter</option>
-            <option>Kilometer</option>
-            <option>Inch</option>
-            <option>Foot</option>
-            <option>Yard</option>
-            <option>Mile</option>
+            <option selected disabled>Open this select menu</option><option value="mm">Millimeter</option>
+            <option value="cm">Centimeter</option>
+            <option value="m">Meter</option>
+            <option value="km">Kilometer</option>
+            <option value="in">Inch</option>
+            <option value="ft">Foot</option>
+            <option value="yd">Yard</option>
+            <option value="mi">Mile</option>
         </select>
 
     </div>
@@ -26,14 +24,14 @@
         @* <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"> *@
         <select class="form-select" aria-label="Default select example" name="unitTo">
             <option selected disabled>Open this select menu</option>
-            <option>Millimeter</option>
-            <option>Centimeter</option>
-            <option>Meter</option>
-            <option>Kilometer</option>
-            <option>Inch</option>
-            <option>Foot</option>
-            <option>Yard</option>
-            <option>Mile</option>
+            <option value="mm">Millimeter</option>
+            <option value="cm">Centimeter</option>
+            <option value="m">Meter</option>
+            <option value="km">Kilometer</option>
+            <option value="in">Inch</option>
+            <option value="ft">Foot</option>
+            <option value="yd">Yard</option>
+            <option value="mi">Mile</option>
         </select>
     </div>
     <div class="form-group d-none">
