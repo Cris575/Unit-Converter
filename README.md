@@ -46,7 +46,6 @@ The repository includes a `global.json` file that selects the .NET 9 SDK and per
    ```
 
 5. Open the URL printed by the application. The default development URLs are:
-
    - `http://localhost:5052`
    - `https://localhost:7007`
 
@@ -65,11 +64,11 @@ The repository includes a `global.json` file that selects the .NET 9 SDK and per
 
 ## Supported units
 
-| Category | Units |
-| --- | --- |
-| Length | Millimeter (`mm`), centimeter (`cm`), meter (`m`), kilometer (`km`), inch (`in`), foot (`ft`), yard (`yd`), mile (`mi`) |
-| Weight | Milligram (`mg`), gram (`g`), kilogram (`kg`), ounce (`oz`), pound (`lb`) |
-| Temperature | Celsius (`°C`), Fahrenheit (`°F`), Kelvin (`K`) |
+| Category    | Units                                                                                                                   |
+| ----------- | ----------------------------------------------------------------------------------------------------------------------- |
+| Length      | Millimeter (`mm`), centimeter (`cm`), meter (`m`), kilometer (`km`), inch (`in`), foot (`ft`), yard (`yd`), mile (`mi`) |
+| Weight      | Milligram (`mg`), gram (`g`), kilogram (`kg`), ounce (`oz`), pound (`lb`)                                               |
+| Temperature | Celsius (`°C`), Fahrenheit (`°F`), Kelvin (`K`)                                                                         |
 
 Length and weight values are converted through a common base unit: meters for length and kilograms for weight. Temperature values are converted through Celsius.
 
@@ -109,11 +108,11 @@ Length and weight values are converted through a common base unit: meters for le
 
 ## Routes
 
-| Route | Purpose |
-| --- | --- |
-| `/` or `/Home/Index` | Length converter |
-| `/Home/Weight` | Weight converter |
-| `/Home/Temperatures` | Temperature converter |
+| Route                    | Purpose                     |
+| ------------------------ | --------------------------- |
+| `/` or `/Home/Index`     | Length converter            |
+| `/Home/Weight`           | Weight converter            |
+| `/Home/Temperatures`     | Temperature converter       |
 | `POST /Home/UnitConvert` | Processes a conversion form |
 
 The conversion form submits `Measure`, `UnitFrom`, `UnitTo`, and `View` values to `POST /Home/UnitConvert`. This is an MVC form endpoint, not a JSON REST API.
@@ -129,29 +128,3 @@ To add a length or weight unit:
 3. For temperature units, add the `ToCelsius` and `FromCelsius` functions to the temperature factor dictionary and add the matching options in `Views/Home/_Temperatures.cshtml`.
 
 Keep the option value in the view identical to the dictionary key in `UnitFactorsProvider.cs`.
-
-## Development commands
-
-Run the application with the HTTPS profile:
-
-```bash
-dotnet run --project "Unit Converter/Unit Converter.csproj" --launch-profile https
-```
-
-Build the solution in Release mode:
-
-```bash
-dotnet build "Unit Converter.sln" --configuration Release
-```
-
-Clean generated build output:
-
-```bash
-dotnet clean "Unit Converter.sln"
-```
-
-Generated `bin/` and `obj/` directories, IDE files, and local user settings are excluded by `.gitignore`.
-
-## License
-
-No license file is currently included in the repository. Add a license before distributing or reusing the project publicly.
