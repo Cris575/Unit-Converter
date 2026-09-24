@@ -128,29 +128,3 @@ To add a length or weight unit:
 3. For temperature units, add the `ToCelsius` and `FromCelsius` functions to the temperature factor dictionary and add the matching options in `Views/Home/_Temperatures.cshtml`.
 
 Keep the option value in the view identical to the dictionary key in `UnitFactorsProvider.cs`.
-
-## Development commands
-
-Run the application with the HTTPS profile:
-
-```bash
-dotnet run --project "Unit Converter/Unit Converter.csproj" --launch-profile https
-```
-
-Build the solution in Release mode:
-
-```bash
-dotnet build "Unit Converter.sln" --configuration Release
-```
-
-Clean generated build output:
-
-```bash
-dotnet clean "Unit Converter.sln"
-```
-
-Generated `bin/` and `obj/` directories, IDE files, and local user settings are excluded by `.gitignore`.
-
-## License
-
-No license file is currently included in the repository. Add a license before distributing or reusing the project publicly.
