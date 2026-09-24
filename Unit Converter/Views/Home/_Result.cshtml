@@ -1,7 +1,23 @@
 ﻿@model UnitConverterViewModel
 
-@Model.Value
 @* @Model.View *@
-<div class="card-footer">
-    <a class="btn btn-primary" asp-action="Index" asp-controller="Home" target="_blank" rel="noopener noreferrer">Visitar</a>
+<div class="card border-0 shadow-sm rounded-4">
+    <div class="card-body">
+        <p class="text-muted fw-semibold mb-2">
+            Result of your calculation
+        </p>
+
+        <h2 class="fw-bold mb-0">
+            @Model.Measure @Model.UnitFrom = @Model.Value @Model.UnitTo
+        </h2>
+    </div>
+
+    <div class="card-footer bg-white border-0 p-3">
+        <a class="btn btn-primary rounded-pill px-4"
+           asp-action="Index"
+           asp-controller="Home"
+           rel="noopener noreferrer">
+            Reset
+        </a>
+    </div>
 </div>
