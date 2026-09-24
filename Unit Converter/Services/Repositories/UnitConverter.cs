@@ -3,10 +3,8 @@
 namespace Unit_Converter.Services.Repositories;
 public interface IUnitConverter
 {
-    // Método para unidades proporcionales (Longitud, Peso, etc.)
     double ConvertStandard(UnitConverterViewModel unitConverter, IReadOnlyDictionary<string, double> values);
 
-    // Método para Temperaturas
     double ConvertTemperature(
         UnitConverterViewModel unitConverter, 
         IReadOnlyDictionary<string, (Func<double, double> ToCelsius, Func<double, double> FromCelsius)> tempFactors);
