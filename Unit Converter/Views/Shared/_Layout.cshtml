@@ -8,12 +8,29 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
     <link rel="stylesheet" href="~/Unit_Converter.styles.css" asp-append-version="true"/>
+    <style>
+        /* For Chrome, Safari, Edge y Opera */
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        /* For Firefox */
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+
+        form > div{
+            margin: 5px 0;
+        }
+    </style>
 </head>
 <body>
 <header>
     <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-        <div class="container-fluid">
-            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Unit_Converter</a>
+        <div class="container-fluid mx-auto" style="width: fit-content;">
+            @* <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Unit Converter</a> *@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -27,7 +44,7 @@
                         <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Weight">Weight</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Temperatures">Weight</a>
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Temperatures">Temperature</a>
                     </li>
                 </ul>
             </div>
