@@ -2,6 +2,8 @@
 
 A small ASP.NET Core MVC web application for converting length, weight, and temperature values. The application provides a browser-based interface with separate navigation pages for each conversion category and displays results rounded to four decimal places.
 
+Project roadmap: [roadmap.sh/projects/unit-converter](https://roadmap.sh/projects/unit-converter)
+
 ## Features
 
 - Length conversions
